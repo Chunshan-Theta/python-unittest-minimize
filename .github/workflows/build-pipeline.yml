@@ -6,10 +6,7 @@ on:
     branches:
       - master
       - main
-  pull_request:
-    branches:
-      - master
-      - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -37,15 +34,5 @@ jobs:
       with:
         name: code-coverage-report
         path: src/htmlcov
-    - name: Run package creation
-      run: |
-        cd src
-        python -m pip install --user --upgrade build
-        python -m build
-    - name: Archive package
-      uses: actions/upload-artifact@v2
-      with:
-        name: awesome-calculator
-        path: src/dist    
 
 
