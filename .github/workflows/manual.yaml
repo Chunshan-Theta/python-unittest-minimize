@@ -35,6 +35,7 @@ jobs:
           path: src/htmlcov
 
   build-image:
+    needs: [run-and-test]
     runs-on: ubuntu-latest
     steps:
       -
